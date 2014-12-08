@@ -42,14 +42,14 @@ public class MainActivity extends ActionBarActivity {
     Button button;
     public TextView textview;
     public EditText edittext;
-    Context context;
+     Context context;
     TextView TT;
     
     HttpClient httpclient;
 	HttpPost httppost;
 	EditText edname, edpassword, edemail, edphone;
 	
-	String geted1, geted2, geted3;
+	String username, password, Email;
 	
 	boolean internetactive;
     
@@ -60,10 +60,11 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         addListenerOnButton();
+        addListenerOnButtonlogin();
         
         //To Get values from Edit text
         
-        edname = (EditText) findViewById(R.id.edUsername);
+        edname = (EditText) findViewById(R.id.edusername);
 		edpassword = (EditText) findViewById(R.id.edpassword);
 		edemail = (EditText) findViewById(R.id.edEmail);
 		
@@ -82,15 +83,15 @@ public class MainActivity extends ActionBarActivity {
 			public void onClick(View arg0) {
 				
 				//Assign edittext value to define variable
-				geted1 = edname.getText().toString();
-				geted2 = edpassword.getText().toString();
-				geted3 = edemail.getText().toString();
+				username = edname.getText().toString();
+				password = edpassword.getText().toString();
+				Email = edemail.getText().toString();
 				
-				if (geted1.equals("") || geted2.equals("")
-						|| geted3.equals("")) {
+				if (username.equals("") || password.equals("")
+						|| Email.equals("")) {
 					Toast.makeText(MainActivity.this, "Fields are empty",
 							Toast.LENGTH_SHORT).show();
-				}  else if (geted2.length() < 6) {
+				}  else if (password.length() < 6) {
 					Toast.makeText(MainActivity.this,
 							"Password Size is less than 6",
 							Toast.LENGTH_SHORT).show();
@@ -106,29 +107,20 @@ public class MainActivity extends ActionBarActivity {
 
 					}
 				}
-				
-				
-				
-				
-				// TODO Auto-generated method stub
-				//
-				 //Intent intent=new Intent(context,MainActivity.class);
-		       //  startActivity(intent);
-				//String value=objmobilehttprerquest.postData();
-				//String.. url="http://198.20.168.145:8091/apicalls.asmx/UserSignup";
-			//	String[] a = { "http://198.20.168.145:8091/apicalls.asmx/HelloWorld", "world" };
-				//String value=objmobilehttprerquest.doInBackground(a);
-			//	String value=objmobilehttprerquest.doInBackground(a);
-			//	showtoast(value);
-				
-				
-				
-
+			}
+		});
+    }
+    
+    public void addListenerOnButtonlogin()
+    {
+    	button=(Button) findViewById(R.id.btnLoginInsignupPage);
+    	button.setOnClickListener(new OnClickListener() {
 			
-
-				
-			//	String value= "Hi";//  postData();
-		      //  TT.setText(value);
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				Intent intent=new Intent(MainActivity.this,LoginActivity.class);
+			     startActivity(intent);
 			}
 		});
     }
@@ -168,9 +160,9 @@ public class MainActivity extends ActionBarActivity {
 				httpclient = new DefaultHttpClient(params);
 				List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(
 						2);
-				nameValuePairs.add(new BasicNameValuePair("username", geted1));
-				nameValuePairs.add(new BasicNameValuePair("password", geted2));
-				nameValuePairs.add(new BasicNameValuePair("email", geted3));
+				nameValuePairs.add(new BasicNameValuePair("username", username));
+				nameValuePairs.add(new BasicNameValuePair("password", password));
+			    nameValuePairs.add(new BasicNameValuePair("email", Email));
 				httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs,
 						"utf-8"));
 				result = httpclient.execute(httppost,
@@ -214,39 +206,7 @@ public class MainActivity extends ActionBarActivity {
     
     
     
-//    public String postData() 
-//    {
-//    	String responseStr = "hello";
-//    	try {
-//    	// Create a new HttpClient and Post Header
-//        HttpClient httpclient = new DefaultHttpClient();
-//        HttpPost httppost = new HttpPost("http://198.20.168.145:8091/apicalls.asmx/UserSignup");
-//        
-//        
-//            // Add your data
-//         List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(3);
-//          nameValuePairs.add(new BasicNameValuePair("username", "para"));
-//            nameValuePairs.add(new BasicNameValuePair("password", "para"));
-//            nameValuePairs.add(new BasicNameValuePair("email", "param@gmail.com"));
-//            httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-//
-//            // Execute HTTP Post Request
-//
-//     HttpResponse  response = httpclient.execute(httppost);
-//             responseStr = EntityUtils.toString(response.getEntity());
-//             
-//            
-//        } catch (ClientProtocolException e) {
-//        	responseStr="clienterror";
-//            // TODO Auto-generated catch block
-//        } catch (IOException e) {
-//        	responseStr=e.getMessage();
-//            // TODO Auto-generated catch block
-//        }
-//    	return responseStr;
-//    
-//    }
-        
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

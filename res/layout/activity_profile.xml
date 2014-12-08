@@ -1,0 +1,102 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.demo.ProfileActivity" >
+
+    <EditText
+        android:id="@+id/edEmpname"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edEmpAddress"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/blankbox"
+        android:ems="10"
+        android:gravity="left|center"
+        android:hint="Full Name"
+        android:inputType="text"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:id="@+id/edEmpAddress"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edContact"
+        android:layout_below="@+id/edEmpname"
+        android:background="@drawable/blankbox"
+        android:ems="10"
+        android:gravity="left|center"
+        android:hint="Address"
+        android:inputType="textPostalAddress"
+        tools:ignore="HardcodedText" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/edContact"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edQualification"
+        android:layout_below="@+id/edEmpAddress"
+        android:background="@drawable/blankbox"
+        android:ems="10"
+        android:gravity="left|center"
+        android:hint="Contact"
+        android:inputType="phone"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:id="@+id/edQualification"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edDesignation"
+        android:layout_below="@+id/edContact"
+        android:background="@drawable/blankbox"
+        android:ems="10"
+        android:gravity="left|center"
+        android:hint="Qualification"
+        android:inputType="text"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:id="@+id/edDesignation"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edDepartment"
+        android:layout_below="@+id/edQualification"
+        android:background="@drawable/blankbox"
+        android:ems="10"
+        android:gravity="left|center"
+        android:hint="Designation"
+        android:inputType="text"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:id="@+id/edDepartment"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edDesignation"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/blankbox"
+        android:ems="10"
+        android:gravity="left|center"
+        android:hint="Department"
+        android:inputType="text"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edDepartment"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:text="Update" 
+         tools:ignore="HardcodedText" />
+
+</RelativeLayout>
