@@ -20,6 +20,8 @@
         android:hint="Full Name"
         android:inputType="text"
         tools:ignore="HardcodedText" />
+          <requestFocus />
+   
 
     <EditText
         android:id="@+id/edEmpAddress"

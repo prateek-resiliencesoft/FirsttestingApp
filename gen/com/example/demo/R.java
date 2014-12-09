@@ -1081,6 +1081,7 @@ containing a value of this type.
         public static final int ic_launcher=0x7f020058;
     }
     public static final class id {
+        public static final int Edusername=0x7f050050;
         public static final int action_bar=0x7f05001c;
         public static final int action_bar_activity_content=0x7f050015;
         public static final int action_bar_container=0x7f05001b;
@@ -1092,12 +1093,15 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f050016;
         public static final int action_menu_presenter=0x7f050017;
         public static final int action_mode_close_button=0x7f050024;
-        public static final int action_settings=0x7f050049;
+        public static final int action_settings=0x7f050053;
         public static final int activity_chooser_view_content=0x7f050025;
         public static final int always=0x7f05000b;
         public static final int beginning=0x7f050011;
         public static final int btnLoginInsignupPage=0x7f050041;
+        public static final int btnSearch=0x7f05004b;
         public static final int btnSignup=0x7f050040;
+        public static final int btnSubmit=0x7f05004a;
+        public static final int btnTaskAssign=0x7f050052;
         public static final int btnUpdate=0x7f050048;
         public static final int btnlogin=0x7f05003e;
         public static final int checkbox=0x7f05002d;
@@ -1111,8 +1115,14 @@ containing a value of this type.
         public static final int edDesignation=0x7f050046;
         public static final int edEmail=0x7f05003f;
         public static final int edEmpAddress=0x7f050043;
+        public static final int edEmpTask=0x7f050051;
         public static final int edEmpname=0x7f050042;
+        public static final int edFromDate=0x7f05004d;
         public static final int edQualification=0x7f050045;
+        public static final int edTaskAllocateDate=0x7f05004f;
+        public static final int edTaskEndDate=0x7f05004e;
+        public static final int edTodate=0x7f05004c;
+        public static final int editText1=0x7f050049;
         public static final int edit_query=0x7f050030;
         public static final int edpassword=0x7f05003c;
         public static final int edusername=0x7f05003d;
@@ -1209,12 +1219,16 @@ containing a value of this type.
         public static final int activity_login=0x7f030018;
         public static final int activity_main=0x7f030019;
         public static final int activity_profile=0x7f03001a;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001b;
+        public static final int activity_task_message=0x7f03001b;
+        public static final int activity_tomorrow=0x7f03001c;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001d;
     }
     public static final class menu {
         public static final int login=0x7f0c0000;
         public static final int main=0x7f0c0001;
         public static final int profile=0x7f0c0002;
+        public static final int task_message=0x7f0c0003;
+        public static final int tomorrow=0x7f0c0004;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -1266,6 +1280,8 @@ containing a value of this type.
         public static final int password=0x7f0a0013;
         public static final int title_activity_login=0x7f0a0010;
         public static final int title_activity_profile=0x7f0a0016;
+        public static final int title_activity_task_message=0x7f0a0018;
+        public static final int title_activity_tomorrow=0x7f0a0017;
         public static final int username=0x7f0a0014;
     }
     public static final class style {
