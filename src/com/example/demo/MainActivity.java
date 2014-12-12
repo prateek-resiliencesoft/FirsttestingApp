@@ -49,7 +49,7 @@ public class MainActivity extends ActionBarActivity {
 	HttpPost httppost;
 	EditText edname, edpassword, edemail, edphone;
 	
-	String username, password, Email;
+	String username, password, Email,contact;
 	
 	boolean internetactive;
     
@@ -66,7 +66,8 @@ public class MainActivity extends ActionBarActivity {
         
         edname = (EditText) findViewById(R.id.edusername);
 		edpassword = (EditText) findViewById(R.id.edpassword);
-		edemail = (EditText) findViewById(R.id.edEmail);
+		edemail=(EditText) findViewById(R.id.edEmail);
+		edphone=(EditText)findViewById(R.id.edcontact);
 		
 		
     }
@@ -74,7 +75,7 @@ public class MainActivity extends ActionBarActivity {
     
     public void addListenerOnButton()
     {
-    	 button=(Button) findViewById(R.id.btnSignup);
+    	 button=(Button) findViewById(R.id.button1);
     	 httppost = new HttpPost(HttpUrls.HttpUserSignup);
     	 
     	 button.setOnClickListener(new OnClickListener() {
@@ -83,12 +84,14 @@ public class MainActivity extends ActionBarActivity {
 			public void onClick(View arg0) {
 				
 				//Assign edittext value to define variable
-				username = edname.getText().toString();
-				password = edpassword.getText().toString();
-				Email = edemail.getText().toString();
+			username = edname.getText().toString();
+			password = edpassword.getText().toString();
+			Email = edemail.getText().toString();
+			contact=edphone.getText().toString();
 				
+		
 				if (username.equals("") || password.equals("")
-						|| Email.equals("")) {
+						|| Email.equals("")||contact.equals("")) {
 					Toast.makeText(MainActivity.this, "Fields are empty",
 							Toast.LENGTH_SHORT).show();
 				}  else if (password.length() < 6) {
@@ -112,15 +115,15 @@ public class MainActivity extends ActionBarActivity {
     }
     
     public void addListenerOnButtonlogin()
-    {
-    	button=(Button) findViewById(R.id.btnLoginInsignupPage);
-    	button.setOnClickListener(new OnClickListener() {
+  {
+    	button=(Button) findViewById(R.id.btnloginInsignuppage);
+   	button.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
+		// TODO Auto-generated method stub
 				Intent intent=new Intent(MainActivity.this,LoginActivity.class);
-			     startActivity(intent);
+		     startActivity(intent);
 			}
 		});
     }
@@ -163,6 +166,7 @@ public class MainActivity extends ActionBarActivity {
 				nameValuePairs.add(new BasicNameValuePair("username", username));
 				nameValuePairs.add(new BasicNameValuePair("password", password));
 			    nameValuePairs.add(new BasicNameValuePair("email", Email));
+			    nameValuePairs.add(new BasicNameValuePair("contact", contact));
 				httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs,
 						"utf-8"));
 				result = httpclient.execute(httppost,
@@ -188,11 +192,12 @@ public class MainActivity extends ActionBarActivity {
 					finish();
 				} else {
 					edname.setText("");
-					edname.setHint("Username already exists");
+					edname.setHint("Username already exists."+ s);
 					Toast.makeText(MainActivity.this,
 							"Username already exists", Toast.LENGTH_SHORT)
 							.show();
-					
+					Intent intent=new Intent(MainActivity.this,LoginActivity.class);
+				    startActivity(intent);
 				}
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block

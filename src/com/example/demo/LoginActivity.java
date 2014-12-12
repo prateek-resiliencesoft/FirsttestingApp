@@ -56,13 +56,13 @@ public class LoginActivity extends ActionBarActivity {
 		addListenerOnButton();
 		
 		//Read Edittext values
-        edname = (EditText) findViewById(R.id.edusername);
-		edpassword = (EditText) findViewById(R.id.edpassword);
+        edname = (EditText) findViewById(R.id.edLoginName);
+		edpassword = (EditText) findViewById(R.id.edLoginPassword);
 	}
 
 	public void addListenerOnButton()
     {
-    	 button=(Button) findViewById(R.id.btnlogin);
+    	 button=(Button) findViewById(R.id.btnlogin1);
     	 httppost = new HttpPost(HttpUrls.HttpUserLogin);
     	 
     	 button.setOnClickListener(new OnClickListener() {

@@ -7,110 +7,101 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.demo.TomorrowActivity" >
-         <requestFocus />
-         <requestFocus />
 
-         <Button
-             android:id="@+id/btnSearch"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_below="@+id/edTodate"
-             android:layout_centerHorizontal="true"
-             android:text="Search"
-             tools:ignore="HardcodedText" />
-          
-          
-         
+    <requestFocus />
 
-         <EditText
-             android:id="@+id/edFromDate"
-             android:layout_width="fill_parent"
-             android:layout_height="wrap_content"
-             android:layout_alignLeft="@+id/edTodate"
-             android:layout_alignParentTop="true"
-             android:background="@drawable/blankbox"
-             android:ems="10"
-             android:gravity="left|center"
-             android:hint="from_date"
-             android:inputType="datetime"
-             android:focusableInTouchMode="true"
-             tools:ignore="HardcodedText" />
+    <requestFocus />
 
-         <EditText
-             android:id="@+id/edTodate"
-             android:layout_width="fill_parent"
-             android:layout_height="wrap_content"
-             android:layout_below="@+id/edFromDate"
-             android:background="@drawable/blankbox"
-             android:ems="10"
-             android:gravity="left|center"
-             android:hint="to_date"
-             android:inputType="datetime"
-             android:focusableInTouchMode="true"
-             tools:ignore="HardcodedText" />
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edTodate"
+        android:layout_centerHorizontal="true"
+        android:text="Search"
+        tools:ignore="HardcodedText" />
 
-         <EditText
-             android:id="@+id/edTaskEndDate"
-             android:layout_width="fill_parent"
-             android:layout_height="wrap_content"
-             android:layout_alignLeft="@+id/edTaskAllocateDate"
-             android:layout_below="@+id/edTaskAllocateDate"
-             android:background="@drawable/blankbox"
-             android:ems="10"
-             android:gravity="left|center"
-             android:hint="completion_date"
-             android:inputType="date"
-             tools:ignore="HardcodedText" />
+    <EditText
+        android:id="@+id/edFromDate"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edTodate"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/blankbox"
+        android:ems="10"
+        android:focusableInTouchMode="true"
+        android:gravity="left|center"
+        android:hint="from_date"
+        android:inputType="datetime"
+        tools:ignore="HardcodedText" />
 
-         <EditText
-             android:id="@+id/Edusername"
-             android:layout_width="fill_parent"
-             android:layout_height="wrap_content"
-             android:layout_alignLeft="@+id/edEmpTask"
-             android:layout_below="@+id/btnSearch"
-             android:layout_marginTop="24dp"
-             android:background="@drawable/blankbox"
-             android:ems="10"
-             android:gravity="left|center"
-             android:hint="name"
-             android:inputType="text"
-             tools:ignore="HardcodedText" />
+    <EditText
+        android:id="@+id/edTodate"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edFromDate"
+        android:background="@drawable/blankbox"
+        android:ems="10"
+        android:focusableInTouchMode="true"
+        android:gravity="left|center"
+        android:hint="to_date"
+        android:inputType="datetime"
+        tools:ignore="HardcodedText" />
 
-         <EditText
-             android:id="@+id/edTaskAllocateDate"
-             android:layout_width="fill_parent"
-             android:layout_height="wrap_content"
-             android:layout_alignParentLeft="true"
-             android:layout_below="@+id/edEmpTask"
-             android:background="@drawable/blankbox"
-             android:ems="10"
-             android:gravity="left|center"
-             android:hint="allocate_date"
-             android:inputType="date"
-             tools:ignore="HardcodedText" />
+    <EditText
+        android:id="@+id/EdAndroid"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ednet"
+        android:layout_below="@+id/btnSearch"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/blankbox"
+        android:ems="10"
+        android:gravity="left|center"
+        android:hint="Android"
+        android:focusableInTouchMode="true"
+        android:inputType="none"
+        android:editable="false" 
+        tools:ignore="HardcodedText" />
+ 
 
-         <EditText
-             android:id="@+id/edEmpTask"
-             android:layout_width="fill_parent"
-             android:layout_height="wrap_content"
-             android:layout_alignLeft="@+id/edTaskEndDate"
-             android:layout_below="@+id/Edusername"
-             android:background="@drawable/blankbox"
-             android:ems="10"
-             android:gravity="left|center"
-             android:hint=" asign_task"
-             android:inputType="text"
-             tools:ignore="HardcodedText" />
+    <EditText
+        android:id="@+id/ednet"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/EdAndroid"
+        android:background="@drawable/blankbox"
+        android:ems="10"
+        android:gravity="left|center"
+        android:hint=".net"
+        android:inputType="none"
+        android:editable="false" 
+        android:focusableInTouchMode="true"
+        tools:ignore="HardcodedText" />
 
-         <Button
-             android:id="@+id/btnTaskAssign"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_alignLeft="@+id/btnSearch"
-             android:layout_below="@+id/edTaskEndDate"
-             android:layout_marginTop="20dp"
-             android:text="Assign Task" 
-             tools:ignore="HardcodedText"/>
+    <Button
+        android:id="@+id/btnTaskAssign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="49dp"
+        android:text="Assign Task"
+        tools:ignore="HardcodedText" />
 
-</RelativeLayout>
-<!--  android:onClick="selfDestruct" -->
+    <EditText
+        android:id="@+id/edphp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ednet"
+        android:layout_below="@+id/ednet"
+        android:background="@drawable/blankbox"
+        android:ems="10"
+        android:gravity="left|center"
+        android:hint="Php"
+        android:inputType="none"
+        android:editable="false" 
+         android:focusableInTouchMode="true"
+        tools:ignore="HardcodedText" />
+
+</RelativeLayout><!-- android:onClick="selfDestruct" -->

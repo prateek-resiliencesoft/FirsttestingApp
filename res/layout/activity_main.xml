@@ -1,72 +1,370 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.demo.MainActivity" >
+    android:orientation="vertical" >
 
-    <EditText
-        android:id="@+id/edusername"
+    <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/edEmail"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/blankbox"
-        android:ems="10"
-        android:gravity="left|center"
-        android:hint="@string/username"
-         tools:ignore="HardcodedText" >
+        android:layout_height="fill_parent"
+        android:layout_weight="2.4"
+        android:background="#145f99"
+        tools:ignore="DisableBaselineAlignment" >
 
-        <requestFocus />
-    </EditText>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.4"
+            android:gravity="center|left"
+            android:orientation="vertical"
+            tools:ignore="NestedWeights" >
 
-    <EditText
-        android:id="@+id/edEmail"
+            <TextView
+                android:id="@+id/tvarrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/arrow" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center|left"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/register"
+                android:textColor="#fff" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/edpassword"
-        android:layout_below="@+id/edusername"
-        android:background="@drawable/blankbox"
-        android:ems="10"
-        android:gravity="left|center"
-         tools:ignore="HardcodedText"
-        android:hint="@string/email" android:inputType="textEmailAddress"/>
+        android:layout_height="fill_parent"
+        android:layout_weight="2"
+        android:background="@drawable/logore"
+        android:orientation="vertical" >
+    </LinearLayout>
 
-    <EditText
-        android:id="@+id/edpassword"
+    <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/edEmail"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/blankbox"
-        android:ems="10"
-        android:gravity="left|center"
-         tools:ignore="HardcodedText"
-        android:hint="@string/password" android:inputType="textPassword"/>
+        android:layout_height="fill_parent"
+        android:layout_weight=".9"
+        android:background="#e8e8e8"
+        android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/btnSignup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/edpassword"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="48dp"
-        android:text="Sign Up"
-        tools:ignore="HardcodedText" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.4"
+            android:orientation="vertical"
+            tools:ignore="NestedWeights,UselessLeaf" >
 
-    <Button
-        android:id="@+id/btnLoginInsignupPage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/btnSignup"
-        android:layout_alignBottom="@+id/btnSignup"
-        android:layout_toRightOf="@+id/btnSignup"
-        android:onClick="selfDestruct"
-        android:text="Login"
-        tools:ignore="HardcodedText" />
+        </LinearLayout>
 
-</RelativeLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.4"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/edusername"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/blankbox"
+                android:ems="10"
+                android:gravity="left|center"
+                android:hint="Username"
+                tools:ignore="HardcodedText" 
+                android:inputType="text">
+
+                <requestFocus />
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.5"
+            android:orientation="vertical"
+            tools:ignore="UselessLeaf" >
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.4"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/edpassword"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/blankbox"
+                android:ems="10"
+                android:gravity="left|center"
+                android:hint="Password"
+                android:inputType="textWebPassword"
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.5"
+            android:orientation="vertical"
+            tools:ignore="UselessLeaf" >
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.4"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/edEmail"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/blankbox"
+                android:ems="10"
+                android:gravity="left|center"
+                android:hint="Email"
+                tools:ignore="HardcodedText"
+                 android:inputType="textEmailAddress"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.5"
+            android:orientation="vertical"
+            tools:ignore="UselessLeaf" >
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.4"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/edcontact"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/blankbox"
+                android:ems="10"
+                android:gravity="left|center"
+                android:hint="Contact"
+                tools:ignore="HardcodedText" 
+                />
+            
+            
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.5"
+            android:orientation="vertical"
+            tools:ignore="UselessLeaf" >
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.4" >
+
+           <CheckBox
+                android:id="@+id/chk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+               />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I&apos;ve read the "
+                    android:textColor="#000"
+                    android:textSize="14dp"
+                    tools:ignore="HardcodedText,SpUsage" />
+
+                <TextView
+                    android:id="@+id/terms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="terms and conditions"
+                    android:textColor="#145f99"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText,SpUsage" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.5"
+            android:orientation="vertical"
+            tools:ignore="UselessLeaf" >
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.4"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/signup" />
+        </LinearLayout>
+        
+        
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.5"
+            android:orientation="vertical"
+            tools:ignore="UselessLeaf" >
+
+        </LinearLayout>
+        
+         <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.4"
+            android:orientation="vertical" >
+            
+        <Button
+                android:id="@+id/btnloginInsignuppage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/login1" />
+         
+          </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.5"
+            android:orientation="vertical"
+            tools:ignore="UselessLeaf" >
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
+<!-- <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" -->
+<!-- xmlns:tools="http://schemas.android.com/tools" -->
+<!-- android:layout_width="match_parent" -->
+<!-- android:layout_height="match_parent" -->
+<!-- android:paddingBottom="@dimen/activity_vertical_margin" -->
+<!-- android:paddingLeft="@dimen/activity_horizontal_margin" -->
+<!-- android:paddingRight="@dimen/activity_horizontal_margin" -->
+<!-- android:paddingTop="@dimen/activity_vertical_margin" -->
+<!-- tools:context="com.example.demo.MainActivity" > -->
+
+
+<!-- <EditText -->
+<!-- android:id="@+id/edusername" -->
+<!-- android:layout_width="fill_parent" -->
+<!-- android:layout_height="wrap_content" -->
+<!-- android:layout_alignLeft="@+id/edEmail" -->
+<!-- android:layout_alignParentTop="true" -->
+<!-- android:layout_marginTop="24dp" -->
+<!-- android:background="@drawable/blankbox" -->
+<!-- android:ems="10" -->
+<!-- android:gravity="left|center" -->
+<!-- android:hint="@string/username" -->
+<!-- tools:ignore="HardcodedText" > -->
+
+
+<!-- <requestFocus /> -->
+<!-- </EditText> -->
+
+
+<!-- <EditText -->
+<!-- android:id="@+id/edEmail" -->
+<!-- android:layout_width="fill_parent" -->
+<!-- android:layout_height="wrap_content" -->
+<!-- android:layout_alignLeft="@+id/edpassword" -->
+<!-- android:layout_below="@+id/edusername" -->
+<!-- android:background="@drawable/blankbox" -->
+<!-- android:ems="10" -->
+<!-- android:gravity="left|center" -->
+<!-- tools:ignore="HardcodedText" -->
+<!-- android:hint="@string/email" android:inputType="textEmailAddress"/> -->
+
+
+<!-- <EditText -->
+<!-- android:id="@+id/edpassword" -->
+<!-- android:layout_width="fill_parent" -->
+<!-- android:layout_height="wrap_content" -->
+<!-- android:layout_below="@+id/edEmail" -->
+<!-- android:layout_centerHorizontal="true" -->
+<!-- android:background="@drawable/blankbox" -->
+<!-- android:ems="10" -->
+<!-- android:gravity="left|center" -->
+<!-- tools:ignore="HardcodedText" -->
+<!-- android:hint="@string/password" android:inputType="textPassword"/> -->
+
+
+<!-- <Button -->
+<!-- android:id="@+id/btnSignup" -->
+<!-- android:layout_width="wrap_content" -->
+<!-- android:layout_height="wrap_content" -->
+<!-- android:layout_alignLeft="@+id/edpassword" -->
+<!-- android:layout_centerVertical="true" -->
+<!-- android:layout_marginLeft="48dp" -->
+<!-- android:text="Sign Up" -->
+<!-- tools:ignore="HardcodedText" /> -->
+
+
+<!-- <Button -->
+<!-- android:id="@+id/btnLoginInsignupPage" -->
+<!-- android:layout_width="wrap_content" -->
+<!-- android:layout_height="wrap_content" -->
+<!-- android:layout_alignBaseline="@+id/btnSignup" -->
+<!-- android:layout_alignBottom="@+id/btnSignup" -->
+<!-- android:layout_toRightOf="@+id/btnSignup" -->
+<!-- android:onClick="selfDestruct" -->
+<!-- android:text="Login" -->
+<!-- tools:ignore="HardcodedText" /> -->
+
+
+<!-- </RelativeLayout> -->

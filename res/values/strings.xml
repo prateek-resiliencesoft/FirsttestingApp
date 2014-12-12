@@ -13,5 +13,8 @@
     <string name="title_activity_profile">ProfileActivity</string>
     <string name="title_activity_tomorrow">TomorrowActivity</string>
     <string name="title_activity_task_message">TaskMessageActivity</string>
+    <string name="register">REGISTER</string>
+    <string name="profile">profile</string>
+    <string name="login">login</string>
 
 </resources>
