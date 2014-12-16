@@ -16,5 +16,7 @@
     <string name="register">REGISTER</string>
     <string name="profile">profile</string>
     <string name="login">login</string>
+    <string name="title_activity_emp_details">EmpDetailsActivity</string>
+    <string name="log_out">Log out</string>
 
 </resources>

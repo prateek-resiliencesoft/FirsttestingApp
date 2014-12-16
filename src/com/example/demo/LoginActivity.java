@@ -21,10 +21,13 @@ import com.example.demo.MainActivity.getresult;
 
 import android.support.v7.app.ActionBarActivity;
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -40,7 +43,6 @@ public class LoginActivity extends ActionBarActivity {
     public EditText edittext;
     Context context;
     TextView TT;
-    
     HttpClient httpclient;
 	HttpPost httppost;
 	EditText edname, edpassword, edemail, edphone;
@@ -56,13 +58,13 @@ public class LoginActivity extends ActionBarActivity {
 		addListenerOnButton();
 		
 		//Read Edittext values
-        edname = (EditText) findViewById(R.id.edLoginName);
-		edpassword = (EditText) findViewById(R.id.edLoginPassword);
+        edname = (EditText) findViewById(R.id.edloginusername);
+		edpassword = (EditText) findViewById(R.id.edloginpassword);
 	}
 
 	public void addListenerOnButton()
     {
-    	 button=(Button) findViewById(R.id.btnlogin1);
+    	 button=(Button) findViewById(R.id.btnLogin);
     	 httppost = new HttpPost(HttpUrls.HttpUserLogin);
     	 
     	 button.setOnClickListener(new OnClickListener() {
@@ -162,15 +164,27 @@ public class LoginActivity extends ActionBarActivity {
 				int duration = Toast.LENGTH_SHORT;
 				try {
 					JSONObject jsonObj = new JSONObject(result);
-					String s = "" + jsonObj.get("Message");
+					String access_token = "" + jsonObj.get("AccessToken");
+				    String s = "" + jsonObj.get("Message");
 					if (s.equals("Successfully User LoggedIn")) {
 					Toast.makeText(LoginActivity.this, "LoggedIn Successfully",
 								Toast.LENGTH_SHORT).show();
+					Intent intent=new Intent(LoginActivity.this,ProfileActivity.class);
+					startActivity(intent);
 						finish();
+						
+						SharedPreferences shpref = getSharedPreferences(
+								"Office", MODE_PRIVATE);
+						SharedPreferences.Editor editor = shpref.edit();
+						editor.putString("access_token", access_token);
+						editor.putBoolean("login", true);
+						editor.commit();
 					} else {
 						edname.setText("");
 						edname.setHint("Failed to login");
 						Toast.makeText(LoginActivity.this, "Failed to login", Toast.LENGTH_SHORT).show();
+						Vibrator v = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+						v.vibrate(1000);
 						
 					}
 				} catch (JSONException e) {
@@ -181,6 +195,18 @@ public class LoginActivity extends ActionBarActivity {
 			}
 
 		}
+	 @Override
+		public void onBackPressed() {
+			// TODO Auto-generated method stub
+			super.onBackPressed();
+			try {
+				startActivity(new Intent(LoginActivity.this, MainActivity.class));
+				finish();
+			} catch (Exception e) {
+
+			}
+		}
+
 	    
    	
 

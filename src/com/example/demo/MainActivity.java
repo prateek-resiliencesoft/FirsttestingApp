@@ -21,9 +21,12 @@ import org.apache.http.params.HttpParams;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+
 import android.support.v7.app.ActionBarActivity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -58,6 +61,23 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+        try {
+			SharedPreferences shpref = getSharedPreferences("Office",
+					MODE_PRIVATE);
+			if (shpref.getBoolean("login", false) == true) {
+				startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+				finish();
+			} else {
+
+				setContentView(R.layout.activity_main);
+				
+			}
+		} catch (Exception e) {
+
+			
+		}
+        
         setContentView(R.layout.activity_main);
         addListenerOnButton();
         addListenerOnButtonlogin();
@@ -162,7 +182,7 @@ public class MainActivity extends ActionBarActivity {
 						HttpVersion.HTTP_1_1);
 				httpclient = new DefaultHttpClient(params);
 				List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(
-						2);
+						4);
 				nameValuePairs.add(new BasicNameValuePair("username", username));
 				nameValuePairs.add(new BasicNameValuePair("password", password));
 			    nameValuePairs.add(new BasicNameValuePair("email", Email));

@@ -39,8 +39,13 @@ public class TomorrowActivity extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_tomorrow);
 		addListenerOnButtonSearch();
-		fromdate=(EditText)findViewById(R.id.edFromDate);
-		Enddate=(EditText)findViewById(R.id.edTodate);
+		fromdate=(EditText)findViewById(R.id.edfromdate);
+		Enddate=(EditText)findViewById(R.id.edtodate);
+		android=(EditText) findViewById(R.id.edandroid);
+		net=(EditText) findViewById(R.id.ednet);
+		php=(EditText) findViewById(R.id.edphp);
+		
+		
 		
 		    final Calendar c = Calendar.getInstance();
 		    mYear = c.get(Calendar.YEAR);
@@ -67,31 +72,37 @@ public class TomorrowActivity extends ActionBarActivity {
 					return false;
 				}
 			});
-//		    android.setOnTouchListener(new OnTouchListener() {
-//				
-//				@Override
-//				public boolean onTouch(View v, MotionEvent event) {
-//					// TODO Auto-generated method stub
-//					return false;
-//				}
-//			});
-//		    net.setOnTouchListener(new OnTouchListener() {
-//				
-//				@Override
-//				public boolean onTouch(View v, MotionEvent event) {
-//					// TODO Auto-generated method stub
-//					return false;
-//				}
-//			});
-//		    php.setOnTouchListener(new OnTouchListener() {
-//				
-//				@Override
-//				public boolean onTouch(View v, MotionEvent event) {
-//					// TODO Auto-generated method stub
-//					return false;
-//				}
-//			});
-//		    
+		    android.setOnTouchListener(new OnTouchListener() {
+				
+				@Override
+				public boolean onTouch(View v, MotionEvent event) {
+					// TODO Auto-generated method stub
+					Intent intent=new Intent(TomorrowActivity.this,ProfileActivity.class);
+				     startActivity(intent);
+					return false;
+				}
+			});
+		    net.setOnTouchListener(new OnTouchListener() {
+				
+				@Override
+				public boolean onTouch(View v, MotionEvent event) {
+					// TODO Auto-generated method stub
+					Intent intent=new Intent(TomorrowActivity.this,ProfileActivity.class);
+				     startActivity(intent);
+					return false;
+				}
+			});
+		    php.setOnTouchListener(new OnTouchListener() {
+				
+				@Override
+				public boolean onTouch(View v, MotionEvent event) {
+					// TODO Auto-generated method stub
+					Intent intent=new Intent(TomorrowActivity.this,ProfileActivity.class);
+				     startActivity(intent);
+					return false;
+				}
+			});
+		    
 //		    Allocatedate.setOnTouchListener(new OnTouchListener() {
 //				
 //				@Override
@@ -214,7 +225,7 @@ public class TomorrowActivity extends ActionBarActivity {
 //	
 	public void addListenerOnButtonSearch()
     {
-    	button=(Button) findViewById(R.id.btnSearch);
+    	button=(Button) findViewById(R.id.btnsearch);
     	 button.setOnClickListener(new OnClickListener() {
 			
 			@Override

@@ -21,12 +21,15 @@
             tools:ignore="NestedWeights" >
 
             <TextView
-                android:id="@+id/tvarrow"
+                android:id="@+id/textlgout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:background="@drawable/arrow" />
+                android:text="Log out"
+                tools:ignore="HardcodedText" />
+
         </LinearLayout>
+        
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -115,7 +118,6 @@
                 android:ems="10"
                 android:gravity="left|center"
                 android:hint="Address"
-                android:inputType="textWebPassword"
                 tools:ignore="HardcodedText" />
 
         </LinearLayout>
@@ -146,11 +148,40 @@
                 android:gravity="left|center"
                 android:hint="Contact"
                 tools:ignore="HardcodedText"
-                 android:inputType="textEmailAddress"/>
+                />
 
         </LinearLayout>
 
         <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.5"
+            android:orientation="vertical"
+            tools:ignore="UselessLeaf" >
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.4"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/edDesignation"  
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/blankbox"
+                android:ems="10"
+                android:gravity="left|center"
+                android:hint="Designation"
+                tools:ignore="HardcodedText" 
+                />
+
+        </LinearLayout>
+       <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1.5"
@@ -176,36 +207,7 @@
                 android:gravity="left|center"
                 android:hint="Qualification"
                 tools:ignore="HardcodedText" 
-                android:inputType="phone"/>
-
-        </LinearLayout>
-       <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="1.5"
-            android:orientation="vertical"
-            tools:ignore="UselessLeaf" >
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="1.4"
-            android:orientation="vertical" >
-
-            <EditText
-                android:id="@+id/edDesignation"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/blankbox"
-                android:ems="10"
-                android:gravity="left|center"
-                android:hint="Designation"
-                tools:ignore="HardcodedText" 
-                android:inputType="phone"/>
+                />
 
         </LinearLayout>
          <LinearLayout
@@ -234,7 +236,7 @@
                 android:gravity="left|center"
                 android:hint="Department"
                 tools:ignore="HardcodedText" 
-                android:inputType="phone"/>
+                />
 
         </LinearLayout>
         
@@ -251,7 +253,9 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_weight="1.4" >
+            android:layout_weight="1.4"
+            tools:ignore="UselessLeaf" >
+
        <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -282,7 +286,18 @@
                 android:layout_gravity="center"
                 android:background="@drawable/update" />
         </LinearLayout>
-
+           <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.4"
+            android:orientation="vertical" >
+         <Button
+                android:id="@+id/btnLogout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/logout" />
+      </LinearLayout>
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"

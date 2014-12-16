@@ -330,7 +330,6 @@
 <!-- tools:ignore="HardcodedText" -->
 <!-- android:hint="@string/email" android:inputType="textEmailAddress"/> -->
 
-
 <!-- <EditText -->
 <!-- android:id="@+id/edpassword" -->
 <!-- android:layout_width="fill_parent" -->
