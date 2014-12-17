@@ -18,7 +18,7 @@
             android:layout_weight="1.4"
             android:gravity="center|left"
             android:orientation="vertical"
-            tools:ignore="NestedWeights" >
+            tools:ignore="NestedWeights,InefficientWeight" >
 
             <TextView
                 android:id="@+id/textlgout"
@@ -30,11 +30,9 @@
 
         </LinearLayout>
         
-
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="94dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:gravity="center|left"
             android:orientation="vertical" >
 
@@ -286,18 +284,7 @@
                 android:layout_gravity="center"
                 android:background="@drawable/update" />
         </LinearLayout>
-           <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="1.4"
-            android:orientation="vertical" >
-         <Button
-                android:id="@+id/btnLogout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/logout" />
-      </LinearLayout>
+          
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"

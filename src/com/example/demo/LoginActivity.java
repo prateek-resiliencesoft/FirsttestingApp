@@ -75,9 +75,9 @@ public class LoginActivity extends ActionBarActivity {
 				//Assign edittext value to define variable
 				username = edname.getText().toString();
 				password = edpassword.getText().toString();
-				Toast.makeText(LoginActivity.this,
-						"password is"+password,
-						Toast.LENGTH_SHORT).show();
+//				Toast.makeText(LoginActivity.this,
+//						"password is"+password,
+//						Toast.LENGTH_SHORT).show();
 			//	Email = edemail.getText().toString();
 				
 				if (username.equals("") || password.equals("")

@@ -145,90 +145,12 @@
             tools:ignore="NestedWeights,UselessLeaf" >
         </LinearLayout>
 
-        
-
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1.4"
             android:orientation="vertical"
             tools:ignore="NestedWeights,UselessLeaf" >
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="1.4"
-            android:orientation="vertical" >
-
-            <EditText
-                android:id="@+id/edandroid"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/blankbox"
-                android:editable="false"
-                android:ems="10"
-                android:gravity="left|center"
-                android:hint="Android"
-                tools:ignore="HardcodedText,Deprecated" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="1.4"
-            android:orientation="vertical"
-            tools:ignore="NestedWeights,UselessLeaf" >
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="1.4"
-            android:orientation="vertical" >
-
-            <EditText
-                android:id="@+id/ednet"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/blankbox"
-                android:editable="false"
-                android:ems="10"
-                android:gravity="left|center"
-                android:hint=".net"
-                tools:ignore="HardcodedText,Deprecated" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="1.4"
-            android:orientation="vertical"
-            tools:ignore="NestedWeights,UselessLeaf" >
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="1.4"
-            android:orientation="vertical" >
-
-            <EditText
-                android:id="@+id/edphp"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/blankbox"
-                android:editable="false"
-                android:ems="10"
-                android:gravity="left|center"
-                android:hint="php"
-                tools:ignore="HardcodedText,Deprecated" />
         </LinearLayout>
 
         <LinearLayout

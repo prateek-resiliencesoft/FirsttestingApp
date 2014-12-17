@@ -30,7 +30,6 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" >
-            
         </activity>
         <activity
             android:name=".ProfileActivity"
@@ -39,7 +38,6 @@
         <activity
             android:name=".TomorrowActivity"
             android:label="@string/title_activity_tomorrow" >
-            
         </activity>
         <activity
             android:name=".TaskMessageActivity"
@@ -48,6 +46,14 @@
         <activity
             android:name=".EmpDetailsActivity"
             android:label="@string/title_activity_emp_details" >
+        </activity>
+        <activity
+            android:name=".RecordShow"
+            android:label="@string/title_activity_record_show" >
+        </activity>
+        <activity
+            android:name=".DashActivity"
+            android:label="@string/title_activity_dash" >
         </activity>
     </application>
 

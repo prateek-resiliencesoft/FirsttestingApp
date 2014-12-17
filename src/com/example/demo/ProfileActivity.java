@@ -119,9 +119,9 @@ public class ProfileActivity extends ActionBarActivity implements OnClickListene
 				}
 				catch(Exception ex)
 				{
-					Log.d("Error", ex.getMessage());
-					Toast.makeText(ProfileActivity.this, "access_token is " +ex.getMessage(),
-							Toast.LENGTH_SHORT).show();
+//					Log.d("Error", ex.getMessage());
+//					Toast.makeText(ProfileActivity.this, "access_token is " +ex.getMessage(),
+//							Toast.LENGTH_SHORT).show();
 				}
 //				
 //				Toast.makeText(ProfileActivity.this, "access_token is "+ access_token,
@@ -180,7 +180,7 @@ public class ProfileActivity extends ActionBarActivity implements OnClickListene
 					httpclient = new DefaultHttpClient(params);
 					List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(
 							6);
-					//nameValuePairs.add(new BasicNameValuePair("Fullname", Username));
+//					nameValuePairs.add(new BasicNameValuePair("Fullname", Username));
 					nameValuePairs.add(new BasicNameValuePair("empAddress", address));
 				    nameValuePairs.add(new BasicNameValuePair("contact", contact));
 				    nameValuePairs.add(new BasicNameValuePair("qualification", qualification));
@@ -228,6 +228,7 @@ public class ProfileActivity extends ActionBarActivity implements OnClickListene
 
 		}
 	    
+	    
 	    public void onClick(View v) {
 	    	
 	    	
@@ -256,41 +257,7 @@ public class ProfileActivity extends ActionBarActivity implements OnClickListene
 	    	}
 	    }
 			
-	    public void addListenerOnButtonlogout()
-	    {
-	    	 button=(Button) findViewById(R.id.btnLogout);
-	    	 button.setOnClickListener(new OnClickListener() {
-				
-				@Override
-				public void onClick(View v) {
-					// TODO Auto-generated method stub
-					try{
-						JSONObject jsonObj = new JSONObject("");
-						String access_token = "" + jsonObj.get("AccessToken");
-			    			internetactive = isNetworkAvailable();
-						if (internetactive) {
-							SharedPreferences shpref = getSharedPreferences("Office", MODE_PRIVATE);
-								SharedPreferences.Editor editor = shpref.edit();
-								editor.putBoolean("login", false);
-								editor.commit();
-								startActivity(new Intent(ProfileActivity.this, MainActivity.class));
-								finish();
-							} 
-							else {
-								Toast.makeText(ProfileActivity.this, "Internet Not Connected",
-										Toast.LENGTH_SHORT).show();
-							}
-						
-			    		
-			    	}
-			    	catch(Exception ex)
-			    	{
-			    		
-			    	}
-				}
-			});
 	    
-	    }
 
 
 	@Override

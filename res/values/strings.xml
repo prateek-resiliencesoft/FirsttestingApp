@@ -18,5 +18,8 @@
     <string name="login">login</string>
     <string name="title_activity_emp_details">EmpDetailsActivity</string>
     <string name="log_out">Log out</string>
+    <string name="title_activity_record_show">RecordShow</string>
+    <string name="textview">TextView</string>
+    <string name="title_activity_dash">DashActivity</string>
 
 </resources>
