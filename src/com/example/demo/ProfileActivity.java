@@ -72,7 +72,8 @@ public class ProfileActivity extends ActionBarActivity implements OnClickListene
 		edqualification=(EditText) findViewById(R.id.edQualification);
 		eddesignation=(EditText) findViewById(R.id.edDesignation);
 		eddepartment=(EditText) findViewById(R.id.edDepartment);
-		findViewById(R.id.textlgout).setOnClickListener(this);
+		findViewById(R.id.tvlogout).setOnClickListener(this);
+		findViewById(R.id.txtbacktoDashboardInprofile).setOnClickListener(this);
 		
 		
 //		ProfileItems.access_token = shpref.getString("access_token", "aa");
@@ -234,7 +235,7 @@ public class ProfileActivity extends ActionBarActivity implements OnClickListene
 	    	
 	    	try{
 	    		switch(v.getId()){
-	    		case R.id.textlgout:
+	    		case R.id.tvlogout:
 	    			internetactive = isNetworkAvailable();
 				if (internetactive) {
 					 shpref = getSharedPreferences("Office", MODE_PRIVATE);
@@ -249,8 +250,22 @@ public class ProfileActivity extends ActionBarActivity implements OnClickListene
 								Toast.LENGTH_SHORT).show();
 					}
 					break;
+					
+	    		case R.id.txtbacktoDashboardInprofile:
+	    			internetactive=isNetworkAvailable();
+	    			if(internetactive)
+	    			{
+	    				Intent intent=new Intent(ProfileActivity.this, DashActivity.class);
+	    				startActivity(intent);
+	    				finish();
+	    			}
+	    			else {
+						Toast.makeText(ProfileActivity.this, "Internet Not Connected",
+								Toast.LENGTH_SHORT).show();
+	    			
 	    		}
 	    	}
+	    }
 	    	catch(Exception ex)
 	    	{
 	    		

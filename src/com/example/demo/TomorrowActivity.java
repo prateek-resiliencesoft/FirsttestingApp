@@ -15,6 +15,7 @@ import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.CoreProtocolPNames;
 import org.apache.http.params.HttpParams;
 import android.support.v7.app.ActionBarActivity;
+import android.test.IsolatedContext;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Context;
@@ -64,6 +65,7 @@ public  class TomorrowActivity extends ActionBarActivity implements OnClickListe
 		fromdate=(EditText)findViewById(R.id.edfromdate);
 		Enddate=(EditText)findViewById(R.id.edtodate);
 		findViewById(R.id.Logouttext).setOnClickListener(this);
+		findViewById(R.id.txtbacktoDashboard).setOnClickListener(this);
 		    final Calendar c = Calendar.getInstance();
 		    mYear = c.get(Calendar.YEAR);
 		    mMonth = c.get(Calendar.MONTH);
@@ -263,6 +265,19 @@ public  class TomorrowActivity extends ActionBarActivity implements OnClickListe
 							Toast.LENGTH_SHORT).show();
 				}
 				break;
+    		case R.id.txtbacktoDashboard:
+    			internetactive=isNetworkAvailable();
+    			if(internetactive)
+    			{
+    				Intent intent=new Intent(TomorrowActivity.this, DashActivity.class);
+    				startActivity(intent);
+    				finish();
+    			}
+    			else
+    			{
+    				Toast.makeText(TomorrowActivity.this, "Internet Not Connected",
+							Toast.LENGTH_SHORT).show();
+    			}
     		}
     	}
     	catch(Exception ex)

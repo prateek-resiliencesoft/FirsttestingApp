@@ -16,15 +16,14 @@
             android:layout_width="104dp"
             android:layout_height="match_parent"
             android:gravity="center|left"
-            android:orientation="vertical"
-            tools:ignore="NestedWeights,InefficientWeight" >
-
+            android:orientation="vertical">
+            
             <TextView
-                android:id="@+id/textlgout"
+                android:id="@+id/textviewLogout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
                 android:text="Log out"
+                android:textColor="#fff"
                 tools:ignore="HardcodedText" />
 
         </LinearLayout>
