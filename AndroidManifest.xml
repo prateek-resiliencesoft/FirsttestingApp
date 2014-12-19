@@ -25,8 +25,7 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            
+            </intent-filter>        
         </activity>
         <activity
             android:name=".LoginActivity"
@@ -39,6 +38,7 @@
         <activity
             android:name=".TomorrowActivity"
             android:label="@string/title_activity_tomorrow" >
+            
         </activity>
         <activity
             android:name=".TaskMessageActivity"

@@ -7,6 +7,7 @@ import org.apache.http.HttpVersion;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.DefaultHttpClient;
@@ -118,13 +119,13 @@ public  class TomorrowActivity extends ActionBarActivity implements OnClickListe
 		private void updateDisplay() {
 			fromdate.setText(new StringBuilder()
 		    // Month is 0 based so add 1
-		            .append(mDay).append("-").append(mMonth + 1).append("-").append(mYear));
+		            .append(mMonth + 1).append("-").append(mDay).append("-").append(mYear));
 		}
 		private void updateDisplay1() {
 
 			Enddate.setText(new StringBuilder()
 		    // Month is 0 based so add 1
-		            .append(mDay1).append("-").append(mMonth1 + 1).append("-").append(mYear1));
+		            .append(mMonth1 + 1).append("-").append(mDay1).append("-").append(mYear1));
 		}
 		
 		// the callback received when the user "sets" the date in the dialog
@@ -151,10 +152,14 @@ public  class TomorrowActivity extends ActionBarActivity implements OnClickListe
 		        updateDisplay1();
 		    }
 		};
+		
+		
+		
 	public void addListenerOnButtonSearch()
     {
     	button=(Button) findViewById(R.id.btnsearch);
     	httppost = new HttpPost(HttpUrls.httpsearch);
+    	
     	 button.setOnClickListener(new OnClickListener() {
     		
 			@Override
