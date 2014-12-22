@@ -13,18 +13,17 @@
         tools:ignore="DisableBaselineAlignment" >
 
         <LinearLayout
-            android:layout_width="77dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center|left"
             android:orientation="vertical"
             tools:ignore="NestedWeights,InefficientWeight" >
 
             <TextView
-                android:id="@+id/tvlogout"
-                android:layout_width="wrap_content"
+                android:id="@+id/txtbacktoDashboardInprofile"
+                android:layout_width="86dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="Log out"
+                android:text="Dashboard"
                 android:textColor="#fff"
                 tools:ignore="HardcodedText" />
                 
@@ -51,13 +50,14 @@
             android:gravity="center|right"
             android:orientation="vertical" >
 
-            <TextView
-                android:id="@+id/txtbacktoDashboardInprofile"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="Dashboard"
-                android:textColor="#fff"
-                tools:ignore="HardcodedText" />
+           <TextView
+               android:id="@+id/tvlogout"
+               android:layout_width="66dp"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="10dp"
+               android:text="Log out"
+               android:textColor="#fff"
+               tools:ignore="HardcodedText" />
 
         </LinearLayout>
     </LinearLayout>

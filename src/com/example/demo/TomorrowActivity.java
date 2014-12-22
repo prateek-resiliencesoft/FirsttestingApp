@@ -15,6 +15,9 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.CoreProtocolPNames;
 import org.apache.http.params.HttpParams;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.support.v7.app.ActionBarActivity;
 import android.test.IsolatedContext;
 import android.app.DatePickerDialog;
@@ -54,7 +57,7 @@ public  class TomorrowActivity extends ActionBarActivity implements OnClickListe
     private int mYear1;
     private int mMonth1;
     private int mDay1;
-    String access_token,begindate,enddate;
+    String access_token,begindate,enddate,Showdetails;
     boolean internetactive;
     
     @Override
@@ -168,10 +171,11 @@ public  class TomorrowActivity extends ActionBarActivity implements OnClickListe
 				begindate = fromdate.getText().toString();
 				enddate = Enddate.getText().toString();
 				access_token=shpref.getString("access_token", "aa");
+				
 //				Intent intent=new Intent(TomorrowActivity.this,RecordShow.class);
 //				startActivity(intent);
               try{
-					
+            	  
 					access_token=shpref.getString("access_token", "aa");
 					Toast.makeText(TomorrowActivity.this, "access_token is " +access_token,
 							Toast.LENGTH_SHORT).show();
@@ -203,6 +207,7 @@ public  class TomorrowActivity extends ActionBarActivity implements OnClickListe
 				nameValuePairs.add(new BasicNameValuePair("begindate", begindate));		   
 			    nameValuePairs.add(new BasicNameValuePair("enddate:", enddate));
 			    nameValuePairs.add(new BasicNameValuePair("accesstoken", access_token));
+			   
 				httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs,
 						"utf-8"));
 				result = httpclient.execute(httppost,
@@ -214,7 +219,10 @@ public  class TomorrowActivity extends ActionBarActivity implements OnClickListe
 			}
 			return null;
 		}
-	
+		
+	}
+
+		
 	
 	
 	 public void showtoast(String message)
@@ -227,9 +235,6 @@ public  class TomorrowActivity extends ActionBarActivity implements OnClickListe
 			toast.show();
 	    }
 
-	
-
-	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

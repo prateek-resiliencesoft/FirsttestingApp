@@ -95,7 +95,7 @@ public class MainActivity extends ActionBarActivity {
     
     public void addListenerOnButton()
     {
-    	 button=(Button) findViewById(R.id.button1);
+    	 button=(Button) findViewById(R.id.btnbrowser);
     	 httppost = new HttpPost(HttpUrls.HttpUserSignup);
     	 
     	 button.setOnClickListener(new OnClickListener() {
@@ -211,8 +211,8 @@ public class MainActivity extends ActionBarActivity {
 							Toast.LENGTH_SHORT).show();
 					finish();
 				} else {
-					edname.setText("");
-					edname.setHint("Username already exists."+ s);
+//					edname.setText("");
+//					edname.setHint("Username already exists."+ s);
 					Toast.makeText(MainActivity.this,
 							"Username already exists", Toast.LENGTH_SHORT)
 							.show();

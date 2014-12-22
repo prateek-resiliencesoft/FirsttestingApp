@@ -13,22 +13,6 @@
         tools:ignore="DisableBaselineAlignment" >
 
         <LinearLayout
-            android:layout_width="104dp"
-            android:layout_height="match_parent"
-            android:gravity="center|left"
-            android:orientation="vertical">
-            
-            <TextView
-                android:id="@+id/textviewLogout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Log out"
-                android:textColor="#fff"
-                tools:ignore="HardcodedText" />
-
-        </LinearLayout>
-        
-        <LinearLayout
             android:layout_width="94dp"
             android:layout_height="match_parent"
             android:gravity="center|left"
@@ -40,7 +24,23 @@
                 android:text="dashboard"
                 android:textColor="#fff"
                 tools:ignore="HardcodedText" />
+        </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="104dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.73"
+            android:gravity="center|right"
+            android:orientation="vertical"
+            tools:ignore="InefficientWeight,NestedWeights" >
+
+            <TextView
+                android:id="@+id/textviewLogout"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:text="Log out"
+                android:textColor="#fff"
+                tools:ignore="HardcodedText" />
         </LinearLayout>
     </LinearLayout>
 
