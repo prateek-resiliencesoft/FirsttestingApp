@@ -1,5 +1,9 @@
 package com.example.demo;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -25,94 +29,100 @@ import android.widget.Toast;
 
 public class BrowserActivity extends ActionBarActivity  {
   Button button;
-  HttpClient httpclient;
- 	HttpPost httppost;
+//  HttpClient httpclient;
+// 	HttpPost httppost;
  	private WebView webview;
- 	Context context;
- 	private static final int START_AFTER_SECONDS = 10;
- 	
+// 	Context context;
+// 	private static final int START_AFTER_SECONDS = 10;
+ 	Uri uri,uri1;
+ 	String Purl;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);	
 		setContentView(R.layout.activity_browser);
+	//{ THIS IS WORKING CODE PARAMATMA SHARAN UPADHYAY
+		final Handler h=new Handler();
+		final Runnable r=new Runnable() {
+			
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+//				Toast.makeText(BrowserActivity.this, "hello Siyasut  Upadhyay",Toast.LENGTH_SHORT).show();
+				Uri uri=Uri.parse("http://www.google.com");
+				Intent intent=new Intent(Intent.ACTION_VIEW, uri);
+				startActivity(intent);
+			}
+		}; 
+		Timer t=new Timer();
+		t.scheduleAtFixedRate(new TimerTask() {
+			
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				h.post(r);
+			}
+		},6000,5000);
 		
-		move_next();
+		if(uri=="www.google.com")
+		{
 		
-//		Intent intent = new Intent(Intent.ACTION_VIEW, 	 Uri.parse("http://www.google.com"));
-//		startActivity(intent);
+		}
 		
-//		webview  =(WebView) findViewById(R.id.Webgoogle);
-//		webview.loadUrl("http://google.com");
-//		TimerTask timerTask = new TimerTask() {
-//            @Override
-//            public void run() {
-//                Toast wait = Toast.makeText(getApplicationContext(), "Hello", Toast.LENGTH_LONG);
-////                wait.setGravity(Gravity.TOP, 0, 0);
-////                wait.show();
-//            }
-//        };
-//        Timer timer = new Timer();
-//        timer.schedule(timerTask, 2000, 2000);
-
-    }
 		
-	
-	public void move_next()
-	{
-	final Handler handle = new Handler();
-	        Runnable delay = new Runnable() {
-	            public void run() 
-	            {  
-	            	Intent intent = new Intent(Intent.ACTION_VIEW, 	 Uri.parse("http://www.google.com"));
-	           	Toast.makeText(BrowserActivity.this, "hello Siyasut Paramatma Sharan Upadhyay",
-							Toast.LENGTH_SHORT).show();
-	            	BrowserActivity.this.startService(intent);
-	            }
-	        };
-	        handle.postDelayed(delay,START_AFTER_SECONDS*60);
-	}
-	
 		
-//		new Handler().postDelayed(new Runnable() {
-//			
-//			@Override
-//			public void run() {
-//				// TODO Auto-generated method stub
-//				Uri uri= Uri.parse("http://www.google.com");
-//				
-//				final Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-//				startActivity(intent);
-//				BrowserActivity.this.closeContextMenu();
-//			}
-//		},5000);
+		
+		
+		
+//		
+//		try {
+//			final InputStream is = new URL("http://www.google.com/").openStream();
+//		} catch (MalformedURLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+		}
+//		String url="http://www.google.com";
+//		String Url1="http://www.facebok.com.com";
+//		if(url!=Url1)
+//		{
+//			Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com"));
+//		}
+//		else
+//		{
+//			Intent intent=new Intent(this, TomorrowActivity.class);
+//			startActivity(intent);
+//		}
 //		
 		
 		
 		
+//      uri =Uri.parse("http://www.google.com");
+//      uri1 =Uri.parse("http://www.facebok.com");
+//        Intent intent = new Intent(Intent.ACTION_VIEW, 	uri);
+//		startActivity(intent);
+//		Intent intent1=new Intent(Intent.ACTION_VIEW, 	uri1 );
+//		startActivity(intent1);
+//		if(uri!=uri1)
+//		{
+//			Intent intent1=new Intent(Intent.ACTION_VIEW, 	uri1 );
+//			startActivity(intent1);
+//		}
 		
-
-
-//           new Handler().postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                final Intent mainIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com"));
-//                BrowserActivity.this.startActivity(mainIntent);
-//                BrowserActivity.this.finish();
-//            }
-//        }, 5000);
 		
-		//addListenerOnButtonBrowser();
 		
-
-
-
-	
-	
+		
+		
+		
+//		webview  =(WebView) findViewById(R.id.Webgoogle);
+//		webview.loadUrl("http://google.com");
+		
 	
 //	public void addListenerOnButtonBrowser()
 //	{
 //		button=(Button) findViewById(R.id.btnbrowser);
-////		httppost = new HttpPost(HttpUrls.Url);
+////		
 //		button.setOnClickListener(new OnClickListener() {
 //			
 //			@Override

@@ -26,10 +26,7 @@ public class mobilehttprerquest extends AsyncTask<String, Void, String>  {
 	public mobilehttprerquest() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-	
-	
+		
         @Override
         protected String doInBackground(String... urls) {
               
