@@ -18,6 +18,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.Browser;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,32 +26,36 @@ import android.webkit.WebView;
 import android.webkit.WebView.WebViewTransport;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class BrowserActivity extends ActionBarActivity  {
-  Button button;
-//  HttpClient httpclient;
-// 	HttpPost httppost;
+    Button button;
  	private WebView webview;
-// 	Context context;
-// 	private static final int START_AFTER_SECONDS = 10;
- 	Uri uri,uri1;
- 	String Purl;
+ 	String url;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);	
 		setContentView(R.layout.activity_browser);
 	//{ THIS IS WORKING CODE PARAMATMA SHARAN UPADHYAY
+		
 		final Handler h=new Handler();
 		final Runnable r=new Runnable() {
 			
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
-//				Toast.makeText(BrowserActivity.this, "hello Siyasut  Upadhyay",Toast.LENGTH_SHORT).show();
-				Uri uri=Uri.parse("http://www.google.com");
-				Intent intent=new Intent(Intent.ACTION_VIEW, uri);
-				startActivity(intent);
+			    Toast.makeText(BrowserActivity.this, "hello Siyasut  Upadhyay",Toast.LENGTH_SHORT).show();
+//			    webview  =(WebView) findViewById(R.id.Webgoogle);
+//			    webview.loadUrl("http://google.com");
+//			    Uri uri=Uri.parse("http://www.google.com");
+//			    Intent intent=new Intent(Intent.ACTION_VIEW, uri);
+//				startActivity(intent);	
+			    
+				url = "http://www.google.com";
+				Intent intent = new Intent(Intent.ACTION_VIEW);
+				intent.setData(Uri.parse(url));
+				startActivity(intent);															
 			}
 		}; 
 		Timer t=new Timer();
@@ -60,14 +65,23 @@ public class BrowserActivity extends ActionBarActivity  {
 			public void run() {
 				// TODO Auto-generated method stub
 				h.post(r);
+				if(url=="http://www.google.com")
+				{
+				  Intent intent1=new Intent(BrowserActivity.this, LoginActivity.class);
+				  startActivity(intent1);
+				Browser.clearHistory(null);
+				}
+				
 			}
-		},6000,5000);
+		},10000,10000);
 		
-		if(uri=="www.google.com")
-		{
 		
-		}
 		
+		
+
+		
+		
+	
 		
 		
 		
