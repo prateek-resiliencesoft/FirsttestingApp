@@ -5,13 +5,19 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class EmpDetailsActivity extends ActionBarActivity {
 
+public class EmpDetailsActivity extends ActionBarActivity {
+ 
+	  //Declare GUI variables to store user data for sending email
+  
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_emp_details);
-	}
+	
+	
+    }
+	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

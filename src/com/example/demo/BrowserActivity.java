@@ -15,6 +15,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.Loader;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -46,14 +47,15 @@ public class BrowserActivity extends ActionBarActivity  {
 			public void run() {
 				// TODO Auto-generated method stub
 			    Toast.makeText(BrowserActivity.this, "hello Siyasut  Upadhyay",Toast.LENGTH_SHORT).show();
-//			    webview  =(WebView) findViewById(R.id.Webgoogle);
-//			    webview.loadUrl("http://google.com");
+			    webview  =(WebView) findViewById(R.id.Webgoogle);
+//			    webview.loadUrl("http://google.com");			    
 //			    Uri uri=Uri.parse("http://www.google.com");
 //			    Intent intent=new Intent(Intent.ACTION_VIEW, uri);
 //				startActivity(intent);	
 			    
 				url = "http://www.google.com";
-				Intent intent = new Intent(Intent.ACTION_VIEW);
+				Intent intent = new Intent(Intent.ACTION_DEFAULT);
+				intent.setPackage("com.android.browser");
 				intent.setData(Uri.parse(url));
 				startActivity(intent);															
 			}
@@ -65,15 +67,16 @@ public class BrowserActivity extends ActionBarActivity  {
 			public void run() {
 				// TODO Auto-generated method stub
 				h.post(r);
+			
 				if(url=="http://www.google.com")
 				{
 				  Intent intent1=new Intent(BrowserActivity.this, LoginActivity.class);
 				  startActivity(intent1);
-				Browser.clearHistory(null);
+				 Browser.clearHistory(null);
 				}
 				
 			}
-		},10000,10000);
+		},1000,1000);
 		
 		
 		

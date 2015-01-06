@@ -180,6 +180,7 @@ public class LoginActivity extends ActionBarActivity {
 						editor.putBoolean("login", true);
 						editor.commit();
 					} else {
+						
 						edname.setText("");
 						edname.setHint("Failed to login");
 						Toast.makeText(LoginActivity.this, "Failed to login", Toast.LENGTH_SHORT).show();
